@@ -39,3 +39,15 @@ Part B (Opponents.java): 
   4. Class MyCombiner: Implement combiner as an optimization. The combiner will summarize the mapper output records and pass      its output to reducer if possible. The output type of MyCombiner is the same as the output type of TokenizerMapper. The      combiner will sum the gameNumber, conWin, and conLose. If one of the conWinTag value from the mapper equals 1, set          conWinTag equals 1 which means the final output should not be na. Same operation when setting conLoseTag.
   5. Class IntSumReducer: Reducer will do the same operation as combiner. And After that, reducer will compute the        
      percentage and check if conWinTag or conLoseTag not equal to 1 . If conWinTag not equals to 1, set the conWin to na. If      conLoseTag not equals to 1, set the conLoseTag to na. Otherwise, output the value OutputWritable (the number of              opponents they played, the percentage of time they won against a higher-rated opponent, lost against a lower rated          opponent).
+     
+Part C (Sort.java, MyWritable.java, MyPartitioner.java, MyComparator.java, GroupComparator.java):  
+  1. Class TokenizerMapper: Mapper outputs (player id, opponent id).
+  2. Class MyCombiner: For every player, combiner outputs their opponents list.
+  3. Class IntSumReducer: Reducer output total number of games and number of distinct opponents.
+  4. Class SortingMapper: For Secondary sort using. 
+  5. Class SortingReducer: For Secondary sort using.
+  6. Class MyWritable: For Secondary sort using.
+  7. Class MyPartitioner: For Secondary sort using.
+  8. Class MyComparator: For Secondary sort using.
+  9. Class GroupComparator: For Secondary sort using.
+
